@@ -116,7 +116,7 @@ export default {
             if (item.list && defaultExpanded.length - 1 === index) {
               this.doExpanded(item.list, defaultExpanded)
             }
-          }, 1)
+          }, 10)
         }
       })
     }

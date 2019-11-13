@@ -3,8 +3,6 @@
     <set-tree :treeData="dataInof"
     :triangle="true"
     :checkbox="true"
-    :defaultExpanded="defaultExpanded"
-    :defaultChecked="defaultChecked"
     ></set-tree>
   <!-- treeData:传入数据；
     triangle:三角显示（true开启/false关闭）--选填，默认关闭
@@ -22,8 +20,6 @@ export default {
   },
   data () {
     return {
-      defaultExpanded: [1, 2, 3, 4], // 以0为始默认展开
-      defaultChecked: [1, 2], // 以0为始默认选中--父级选中，子级全选中
       dataInof: [
         {
           title: 'a1',
