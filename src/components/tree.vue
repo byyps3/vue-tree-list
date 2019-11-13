@@ -37,10 +37,8 @@ export default {
     }
   },
   methods: {
-    doClick (i, list) {
-      console.log(list)
-      list = list ? list : this.treeData
-      list.map((item, index) => {
+    doClick (i) {
+      this.treeData.map((item, index) => {
         if (index === i) {
           item.flag = !item.flag
           if (item.list) {
@@ -56,7 +54,7 @@ export default {
           }
         }
       })
-      // console.log(this.treeData)
+      console.log(this.treeData)
     },
     setSelect: function (serial, val) {
       let checkOne = true
@@ -104,17 +102,16 @@ export default {
       // console.log(defaultExpanded)
       treeData.map((item, index) => {
         if (defaultExpanded.indexOf(item.id) + 1) {
+          let i = index
           let id = item.id
           setTimeout(() => {
             defaultExpanded.map((item) => {
               if (id === item) {
-                this.doClick(item - 1, item.list)
+                this.doClick(i)
               }
             })
             let val = defaultExpanded.indexOf(id)
             defaultExpanded.splice(val, 1)
-            // console.log(item.list)
-            // console.log(defaultExpanded.length)
             if (item.list && defaultExpanded.length - 1 === index) {
               this.doExpanded(item.list, defaultExpanded)
             }

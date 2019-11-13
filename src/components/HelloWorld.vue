@@ -3,6 +3,7 @@
     <set-tree :treeData="treeData"
     :triangle="true"
     :checkbox="true"
+    :defaultExpanded="defaultExpanded"
     ></set-tree>
   <!-- treeData:传入数据；
     triangle:三角显示（true开启/false关闭）--选填，默认关闭
@@ -20,6 +21,7 @@ export default {
   },
   data () {
     return {
+      defaultExpanded: [4, 5], // 以1为始默认展开（设置默认展开子级，父级未默认，则父级展开时默认展开子级）
       treeData: [
         {
           title: 'a1',
@@ -42,11 +44,11 @@ export default {
                       id: 41,
                       list: [
                         {
-                          title: 'd1',
+                          title: 'e1',
                           id: 42
                         },
                         {
-                          title: 'd2',
+                          title: 'e2',
                           id: 43
                         }
                       ]
