@@ -37,8 +37,10 @@ export default {
     }
   },
   methods: {
-    doClick (i) {
-      this.treeData.map((item, index) => {
+    doClick (i, list) {
+      console.log(list)
+      list = list ? list : this.treeData
+      list.map((item, index) => {
         if (index === i) {
           item.flag = !item.flag
           if (item.list) {
@@ -106,13 +108,13 @@ export default {
           setTimeout(() => {
             defaultExpanded.map((item) => {
               if (id === item) {
-                this.doClick(item - 1)
+                this.doClick(item - 1, item.list)
               }
             })
             let val = defaultExpanded.indexOf(id)
             defaultExpanded.splice(val, 1)
-            console.log(item.list)
-            console.log(defaultExpanded.length)
+            // console.log(item.list)
+            // console.log(defaultExpanded.length)
             if (item.list && defaultExpanded.length - 1 === index) {
               this.doExpanded(item.list, defaultExpanded)
             }

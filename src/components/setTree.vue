@@ -24,7 +24,7 @@ export default {
     tree
   },
   mounted () {
-    console.log(this.treeData)
+    // console.log(this.treeData)
     this.treeData.map((item, index) => {
       item.layer = 1
       item.triangle = this.triangle

@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <set-tree :treeData="dataInof"
+    <set-tree :treeData="treeData"
     :triangle="true"
     :checkbox="true"
     ></set-tree>
@@ -20,7 +20,7 @@ export default {
   },
   data () {
     return {
-      dataInof: [
+      treeData: [
         {
           title: 'a1',
           id: 1,
